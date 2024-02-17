@@ -1,0 +1,13 @@
+.success {
+  color: rgb(44, 189, 15);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 2px solid rgb(1, 103, 25);
+  border-radius: 5px;
+  background-color: #c5f9b1;
+  box-shadow: 0 0 10px rgba(0, 138, 33, 0.746);
+}

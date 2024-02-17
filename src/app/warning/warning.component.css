@@ -1,0 +1,13 @@
+.warning {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: #ffcccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
