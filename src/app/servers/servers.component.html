@@ -1,3 +1,12 @@
-<app-server></app-server>
-<hr />
-<app-server></app-server>
+<button class="btn btn-success" (click)="onTurnOn()">{{serverBtnCaption}}</button>
+<br><br>
+
+
+<!-- <input type="text" (input)="onUpdateSererName($event)" [hidden]="!allowNewServer"> -->
+
+<input type="text" [(ngModel)]="serverName" [hidden]="!allowNewServer">
+
+<button class="btn btn-primary" (click)="onCreateServer()" [disabled]="!allowNewServer">Add Server: {{serverName}}</button>
+<!-- <p>{{serverCreationStatus}}</p> -->
+
+<!-- <app-server></app-server> -->
