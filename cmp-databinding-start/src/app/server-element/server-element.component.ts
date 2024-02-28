@@ -61,7 +61,6 @@ export class ServerElementComponent
   ngAfterViewInit() {
     console.log('7 ngAfterViewInit called!');
     console.log('8 Text Content: ' + this.header.nativeElement.textContent);
-
   }
 
   ngAfterViewChecked() {
