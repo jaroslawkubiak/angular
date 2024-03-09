@@ -3,21 +3,21 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
 })
 export class UsersComponent {
   users = [
     {
       id: 1,
-      name: 'Max'
+      name: 'Ahsoka Tano',
     },
     {
       id: 2,
-      name: 'Anna'
+      name: 'Sabine Wren',
     },
     {
       id: 3,
-      name: 'Chris'
-    }
+      name: 'Chopper',
+    },
   ];
 }
