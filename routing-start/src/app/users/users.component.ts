@@ -10,14 +10,17 @@ export class UsersComponent {
     {
       id: 1,
       name: 'Ahsoka Tano',
+      img: 'sw1300.png',
     },
     {
       id: 2,
       name: 'Sabine Wren',
+      img: 'sw1302.png',
     },
     {
       id: 3,
-      name: 'Chopper',
+      name: 'Marrok',
+      img: 'sw1301.png',
     },
   ];
 }
