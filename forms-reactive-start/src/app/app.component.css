@@ -1,3 +1,90 @@
 .container {
-  margin-top: 30px;
+  margin-top: 10px;
+}
+.user-data-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.validate-error-wrapper {
+  height: 25px;
+}
+
+.help-block {
+  all: unset;
+  margin-top: 5px;
+  color: rgb(235, 16, 38);
+}
+
+input {
+  background-color: rgb(80, 255, 182);
+  border: 2px solid rgb(3, 163, 131);
+  padding: 20px 10px;
+  color: rgb(2, 48, 8);
+}
+
+label {
+  font-size: 20px;
+  color: rgb(6, 116, 72);
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid rgb(235, 16, 38);
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.hobbies-wrapper {
+  display: grid;
+  grid-template-columns: 100px auto;
+  gap: 40px;
+}
+
+.hobbies-input {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.btn-success {
+  margin-top: 10px;
+  height: 45px;
+}
+
+.gender-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.gender-radio {
+  margin: 10px;
+}
+
+.gender-radio label {
+  cursor: pointer;
+
+}
+
+input[type='radio'] {
+  margin: 10px;
+}
+
+.gender-radio {
+  display: grid;
+}
+
+.btn-success {
+  background-color: rgb(80, 255, 182);
+  border: 2px solid rgb(3, 163, 131);
+  color: black;
+  font-weight: bold;
+}
+
+.summary-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
