@@ -1,0 +1,15 @@
+.btn-success {
+  margin-right: 20px;
+}
+
+.grid-wrapper {
+  display: grid; 
+  grid-template-columns: auto 70px 40px;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: 2px solid rgb(247, 8, 40);
+}
+
