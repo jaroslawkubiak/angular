@@ -6,7 +6,7 @@
           <label for="title">Title</label>
           <input
             type="text"
-            class="form-control"
+            class="form-control input-field"
             id="title"
             required
             ngModel
@@ -16,7 +16,7 @@
         <div class="form-group">
           <label for="content">Content</label>
           <textarea
-            class="form-control"
+            class="form-control input-field"
             id="content"
             required
             ngModel
@@ -39,7 +39,7 @@
       <button class="btn btn-primary" (click)="onFetchPosts()">
         Fetch Posts
       </button>
-      |
+      &nbsp;&nbsp;&nbsp;
       <button
         class="btn btn-danger"
         [disabled]="loadedPosts.length < 1"
@@ -51,7 +51,23 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <p>No posts available!</p>
+      <p class="no-posts" *ngIf="loadedPosts.length == 0 && !isFetching">
+        No posts available!
+      </p>
+      <ul class="list-group" *ngIf="loadedPosts.length > 0 && !isFetching">
+        <li class="list-group-item" *ngFor="let post of loadedPosts">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.content }}</p>
+        </li>
+      </ul>
+      <p class="spinner" *ngIf="isFetching && !error">
+        <span class="loader"></span>
+      </p>
+      <div class="alert alert-danger" *ngIf="error">
+        <h2>An error occured!</h2>
+        <p>{{ error }}</p>
+        <button class="btn btn-danger" (click)="onHandleError()">Okay</button>
+      </div>
     </div>
   </div>
 </div>
