@@ -3,3 +3,13 @@
   justify-content: space-between;
   margin-top: 40px;
 }
+
+.error {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.alert {
+  color: crimson;
+  border: 2px solid crimson;
+}
