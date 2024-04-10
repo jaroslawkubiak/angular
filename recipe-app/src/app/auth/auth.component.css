@@ -1,3 +1,11 @@
+.btn {
+  height: 50px;
+  padding: 0 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  letter-spacing: 1px;
+}
+
 .btn-wrapper {
   display: flex;
   justify-content: space-between;
@@ -12,4 +20,38 @@
 .alert {
   color: crimson;
   border: 2px solid crimson;
+}
+
+.login {
+  input {
+    border: 3px solid rgb(0, 171, 0);
+    background-color: rgba(51, 240, 73, 0.181);
+  }
+}
+
+.singup {
+  input {
+    border: 3px solid rgb(20, 113, 220);
+    background-color: rgba(51, 139, 240, 0.181);
+  }
+}
+
+input {
+  margin: 10px 0;
+  height: 50px;
+  border-radius: 10px;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(0, 171, 0);
+  text-align: center;
+}
+
+.singup-color {
+  color: rgb(20, 113, 220);
+}
+.login-color {
+  color: rgb(0, 171, 0);
 }
