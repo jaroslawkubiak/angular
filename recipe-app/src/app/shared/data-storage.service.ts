@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
-import { map, tap } from 'rxjs';
+import { map, tap, take, exhaustMap } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 //{ providedIn: 'root' }
 @Injectable()
@@ -10,6 +11,7 @@ export class DataStorageService {
   constructor(
     private http: HttpClient,
     private recipeService: RecipeService,
+    private authService: AuthService,
   ) {}
   private BASE_URL =
     'https://recipe-book-3c51e-default-rtdb.europe-west1.firebasedatabase.app/';
