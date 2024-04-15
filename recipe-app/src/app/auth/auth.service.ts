@@ -23,7 +23,7 @@ export class AuthService {
     'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
   private readonly LOGIN_URL =
     'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
-  private readonly API_KEY = 'AIzaSyAhy2cLa-6IPe8yNnqMGHcljELUuDfAeSI';
+  private readonly API_KEY = '';
 
   constructor(
     private http: HttpClient,
