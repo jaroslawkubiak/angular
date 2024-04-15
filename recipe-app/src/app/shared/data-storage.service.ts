@@ -20,7 +20,7 @@ export class DataStorageService {
     const recipes = this.recipeService.getRecipes();
 
     this.http.put(`${this.BASE_URL}/recipes.json`, recipes).subscribe(res => {
-      console.log(res);
+      // console.log(res);
     });
   }
 

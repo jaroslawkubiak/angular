@@ -28,7 +28,7 @@ export class AuthComponent {
     if (!form.valid) {
       return;
     }
-    console.log(form.value);
+    // console.log(form.value);
     const email = form.value.email;
     const password = form.value.password;
 
@@ -43,13 +43,13 @@ export class AuthComponent {
 
     authObs.subscribe(
       resData => {
-        console.log(resData);
+        // console.log(resData);
         this.isLoading = false;
         this.router.navigate(['/recipes']);
       },
       errorMessage => {
         this.error = errorMessage;
-        console.log(errorMessage);
+        // console.log(errorMessage);
         this.isLoading = false;
       },
     );

@@ -29,7 +29,7 @@ export class RecipeEditComponent {
   }
 
   onSubmit() {
-    console.log(this.editMode);
+    // console.log(this.editMode);
     // const newRecipe = new Recipe(
     //   this.recipeForm.value['name'],
     //   this.recipeForm.value['description'],
@@ -37,7 +37,6 @@ export class RecipeEditComponent {
     //   this.recipeForm.value['ingredients'],
     // );
     if (this.editMode) {
-      console.log(`id=${this.id}`);
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
@@ -57,8 +56,8 @@ export class RecipeEditComponent {
     );
   }
 
-  onDeleteIngredient(index:number) {
-(<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+  onDeleteIngredient(index: number) {
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
   }
 
   onCancel() {

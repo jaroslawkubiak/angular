@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
 import { User } from './user.model';
+import { Router } from '@angular/router';
 
 export interface AuthResponseData {
   kind: string;
@@ -16,6 +17,7 @@ export interface AuthResponseData {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   user = new BehaviorSubject<User>(null);
+  private tokenExpirationTimer: any;
 
   private readonly SINGUP_URL =
     'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
@@ -23,7 +25,10 @@ export class AuthService {
     'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
   private readonly API_KEY = 'AIzaSyAhy2cLa-6IPe8yNnqMGHcljELUuDfAeSI';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
 
   singup(email: string, password: string) {
     return this.http
@@ -65,6 +70,49 @@ export class AuthService {
       );
   }
 
+  logout() {
+    this.user.next(null);
+    this.router.navigate(['/auth']);
+    localStorage.removeItem('userData');
+    if (this.tokenExpirationTimer) {
+      clearTimeout(this.tokenExpirationTimer);
+    }
+    this.tokenExpirationTimer = null;
+  }
+
+  autoLogin() {
+    const userData: {
+      email: string;
+      id: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } = JSON.parse(localStorage.getItem('userData'));
+    if (!userData) {
+      return;
+    }
+
+    const loadedUser = new User(
+      userData.email,
+      userData.id,
+      userData._token,
+      new Date(userData._tokenExpirationDate),
+    );
+
+    if (loadedUser.token) {
+      this.user.next(loadedUser);
+      const expirationDuration =
+        new Date(userData._tokenExpirationDate).getTime() -
+        new Date().getTime();
+      this.autoLogout(expirationDuration);
+    }
+  }
+
+  autoLogout(expirationDutation: number) {
+    this.tokenExpirationTimer = setTimeout(() => {
+      this.logout();
+    }, expirationDutation);
+  }
+
   private handleAuthentication(
     email: string,
     userId: string,
@@ -78,6 +126,8 @@ export class AuthService {
       new Date(new Date().getTime() + expiresIn * 1000),
     );
     this.user.next(user);
+    this.autoLogout(expiresIn * 1000);
+    localStorage.setItem('userData', JSON.stringify(user));
   }
 
   private handleError(errorResponse: HttpErrorResponse) {
@@ -86,7 +136,6 @@ export class AuthService {
       return throwError(errorMessage);
     }
 
-    console.log(errorResponse);
     switch (errorResponse.error.error.message) {
       case 'EMAIL_EXISTS':
         errorMessage = 'This email exists already!';
