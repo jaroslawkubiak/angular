@@ -14,7 +14,7 @@ export class DataStorageService {
     private authService: AuthService,
   ) {}
   private BASE_URL =
-    'https://recipe-book-3c51e-default-rtdb.europe-west1.firebasedatabase.app/';
+    'https://angular-b1c0a-default-rtdb.europe-west1.firebasedatabase.app/';
 
   storeRecipe() {
     const recipes = this.recipeService.getRecipes();
