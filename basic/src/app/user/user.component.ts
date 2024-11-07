@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 export class UserComponent {
   userName = '';
 
+  temp = 'teskt';
   onResetName() {
     this.userName = '';
   }
