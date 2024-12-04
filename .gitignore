@@ -10,6 +10,7 @@
 /events
 
 # Node
+/_second_version/section-6/node_modules
 /node_modules
 npm-debug.log
 yarn-error.log
