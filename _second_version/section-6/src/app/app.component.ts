@@ -4,7 +4,6 @@ import { ServerStatusComponent } from './dashboard/server-status/server-status.c
 import { TicketsComponent } from './dashboard/tickets/tickets.component';
 import { TrafficComponent } from './dashboard/traffic/traffic.component';
 import { DashboardItemComponent } from './dashboard/dashboard-item/dashboard-item.component';
-import { ButtonComponent } from './shared/button/button.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +15,6 @@ import { ButtonComponent } from './shared/button/button.component';
     TicketsComponent,
     TrafficComponent,
     DashboardItemComponent,
-    ButtonComponent,
   ],
 })
 export class AppComponent {}
