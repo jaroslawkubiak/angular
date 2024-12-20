@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-server-status',
@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './server-status.component.html',
   styleUrl: './server-status.component.css',
 })
-export class ServerStatusComponent {
+export class ServerStatusComponent implements OnInit {
   currentStatus: serverStatus = serverStatus.unknown;
 
-  constructor() {
+  ngOnInit() {
     setInterval(() => {
       const random = Math.random();
       this.currentStatus =
@@ -19,7 +19,7 @@ export class ServerStatusComponent {
           : random < 0.8
             ? serverStatus.offline
             : serverStatus.unknown;
-    }, 500);
+    }, 1000);
   }
 }
 enum serverStatus {
