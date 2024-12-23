@@ -5,12 +5,10 @@
 /tmp
 /out-tsc
 /bazel-out
-/.vscode
-/.DS_Store
-/events
 
 # Node
 /node_modules
+/.angular
 npm-debug.log
 yarn-error.log
 
