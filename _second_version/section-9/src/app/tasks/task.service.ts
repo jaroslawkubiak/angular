@@ -1,6 +1,5 @@
 import { Injectable, signal } from '@angular/core';
 import { Task, TaskStatus } from './task.model';
-import { Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root',
@@ -10,19 +9,19 @@ export class TaskService {
     {
       title: 'Learn Angular',
       description: 'Learn Angular from Udemy course',
-      status: 'OPEN',
+      status: 'IN_PROGRESS',
       id: '3454657355465654635',
     },
     {
       title: 'Learn RxJS',
       description: 'Learn RxJS from Udemy course',
-      status: 'OPEN',
+      status: 'IN_PROGRESS',
       id: '3454687355422654635',
     },
     {
       title: 'Walk dog to park',
       description: 'Go with Jimmy to the park',
-      status: 'OPEN',
+      status: 'DONE',
       id: '3422687355428454635',
     },
   ]);
