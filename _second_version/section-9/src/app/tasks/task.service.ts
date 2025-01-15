@@ -1,10 +1,12 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Task, TaskStatus } from './task.model';
+import { LoggingService } from '../logging.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
+  private logging = inject(LoggingService);
   private tasks = signal<Task[]>([
     {
       title: 'Learn Angular',
@@ -43,5 +45,6 @@ export class TaskService {
         task.id === id ? { ...task, status: newStatus } : task,
       ),
     );
+    this.logging.log(`Task with id ${id} has been updated to ${newStatus}`);
   }
 }
