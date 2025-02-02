@@ -9,11 +9,11 @@ import { UserService } from '../user.service';
 })
 export class UserComponent implements OnInit {
   id: number;
-  defaultActivate = true;
+  isActive = false;
 
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService,
+    private userService: UserService
   ) {}
 
   ngOnInit() {
@@ -23,8 +23,8 @@ export class UserComponent implements OnInit {
   }
 
   onActivate() {
-    // this.userService.activatedEmitter.emit(true);
-    this.userService.activatedEmitter.next(this.defaultActivate);
-    this.defaultActivate = !this.defaultActivate;
+    this.isActive = !this.isActive;
+    // this.userService.nowyEmmiter.emit(this.isActive);
+    this.userService.nowySubject$.next(this.isActive);
   }
 }

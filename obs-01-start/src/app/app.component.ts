@@ -9,17 +9,23 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   userActivated = false;
-  private activatedSub: Subscription;
+  private activatedSubscription: Subscription;
 
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.activatedSub = this.userService.activatedEmitter.subscribe(didActivate => {
-      this.userActivated = didActivate;
-    });
+    this.activatedSubscription = this.userService.nowySubject$.subscribe(
+      (jakiesDane) => {
+        this.userActivated = jakiesDane;
+      }
+    );
+  }
+
+  showSubject() {
+    console.log(this.userService.nowySubject$);
   }
 
   ngOnDestroy() {
-    this.activatedSub.unsubscribe();
+    this.activatedSubscription.unsubscribe();
   }
 }

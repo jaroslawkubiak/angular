@@ -1,4 +1,10 @@
 <p>
   User with <strong>ID {{ id }}</strong> was loaded
 </p>
-<button class="btn btn-danger" (click)="onActivate()">Activate</button>
+<button
+  class="btn"
+  [ngClass]="isActive ? 'btn-danger' : 'btn-primary'"
+  (click)="onActivate()"
+>
+  {{ isActive ? "Deactivate" : "Activate" }}
+</button>

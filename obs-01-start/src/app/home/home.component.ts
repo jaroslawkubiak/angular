@@ -14,47 +14,46 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor() {}
 
   ngOnInit() {
-    // this.firstObsSubscription = interval(1000).subscribe(count => {
+    // this.firstObsSubscription = interval(1000).subscribe((count) => {
     //   console.log(count);
     // });
-
-    const customIntervalObservable = Observable.create(observer => {
-      let counter = 0;
+    const customIntervalObs = Observable.create((observer) => {
+      let count = 0;
       setInterval(() => {
-        observer.next(counter);
-        if (counter === 5) {
+        observer.next(count);
+        if (count === 3) {
+          observer.error(new Error('licznik większy niż 3'));
+        }
+        if (count === 3) {
           observer.complete();
         }
-        if (counter > 3) {
-          observer.error(new Error('Count is greater than 3!'));
-        }
-        counter++;
+        count++;
       }, 1000);
     });
 
-    this.firstObsSubscription = customIntervalObservable
+    this.firstObsSubscription = customIntervalObs
       .pipe(
-        filter((data: number) => data % 2 === 0),
+        filter((data: number) => {
+          return data > 0;
+        }),
         map((data: number) => {
           return 'Round: ' + (data + 1);
-        }),
+        })
       )
       .subscribe(
-        data => {
-          console.log(data);
+        (jakisEvent) => {
+          console.log(jakisEvent);
         },
-        error => {
-          console.error(error);
-          console.log(error.message);
+        (error) => {
+          console.log(error);
         },
         () => {
-          console.log(`complete!`);
-        },
+          console.log('Complete');
+        }
       );
   }
 
   ngOnDestroy() {
-    // console.log(this.firstObsSubscription);
     this.firstObsSubscription.unsubscribe();
   }
 }
