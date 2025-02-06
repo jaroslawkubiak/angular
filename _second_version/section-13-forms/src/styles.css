@@ -25,7 +25,7 @@ header img {
   object-fit: contain;
   border-radius: 50%;
   border: 2px solid #758a8a;
-  filter: drop-shadow(0 0 4px rgba(31, 42, 42, 0.5));
+  filter: drop-shadow(0 0 4px rgba(31, 31, 42, 0.5));
 }
 
 header h1 {
@@ -34,7 +34,7 @@ header h1 {
   font-size: 3rem;
   margin: 1rem 0;
   letter-spacing: 0.2rem;
-  color: #2f4444;
+  color: #8c0cc7;
 }
 
 form {
@@ -42,7 +42,7 @@ form {
   max-width: 40rem;
   margin: 3rem auto;
   padding: 2rem;
-  background: linear-gradient(180deg, #253c3c, #1d4949);
+  background: linear-gradient(180deg, #680487, #130f65);
   border-radius: 8px;
   box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
 }
@@ -138,7 +138,7 @@ fieldset {
 
 hr {
   margin: 1.5rem 0;
-  border: 1px solid #147b73;
+  border: 1px solid #8c0cc7;
 }
 
 .form-actions {
@@ -152,14 +152,14 @@ hr {
   font-size: 1rem;
   border-radius: 4px;
   border: none;
-  background-color: #147b73;
+  background-color: #8c0cc7;
   color: #d9e2f1;
   cursor: pointer;
 }
 
 .button:hover,
 .button:focus {
-  background-color: #319890;
+  background-color: #b230ef;
 }
 
 .button-flat {
@@ -171,4 +171,13 @@ hr {
 .button-flat:focus {
   background-color: transparent;
   color: #869999;
+}
+
+.control:has(.ng-invalid.ng-touched.ng-dirty) label {
+  color: crimson;
+}
+
+input.ng-invalid.ng-touched.ng-dirty {
+  background-color: rgb(255, 165, 183);
+  border: 2px solid crimson;
 }
