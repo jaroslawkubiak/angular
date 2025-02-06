@@ -19,10 +19,8 @@ export class ServerComponent {
   }
 
   getBgColor() {
-    return this.serverStatus === 'online' ? '#00ff00' : '#ff0000';
+    return this.serverStatus === 'online' ? 'chartreuse' : 'crimson';
   }
-
-
 
   getServerStatus() {
     return this.serverStatus;

@@ -39,7 +39,7 @@ export class AuthComponent implements OnDestroy {
     if (!form.valid) {
       return;
     }
-    // console.log(form.value);
+    console.log(form.value);
     const email = form.value.email;
     const password = form.value.password;
 

@@ -9,7 +9,7 @@ export class ShoppingListService {
     new Ingredient('Lemon', 3),
     new Ingredient('Paprika', 2),
     new Ingredient('Chocolade', 1),
-    new Ingredient('Apples', 2),
+    new Ingredient('Apples', 22),
   ];
 
   getIngredients() {
