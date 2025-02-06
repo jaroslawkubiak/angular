@@ -126,9 +126,10 @@ fieldset {
 
 .control-row {
   margin: 0.5rem 0;
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: start;
+  grid-template-columns: 1fr 1fr 100px;
   gap: 0.5rem;
 }
 
