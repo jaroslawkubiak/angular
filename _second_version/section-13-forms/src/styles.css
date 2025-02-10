@@ -40,8 +40,8 @@ header h1 {
 form {
   width: 90%;
   max-width: 40rem;
-  margin: 3rem auto;
-  padding: 2rem;
+  margin: 1rem auto;
+  padding: 1rem;
   background: linear-gradient(180deg, #680487, #130f65);
   border-radius: 8px;
   box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
@@ -72,8 +72,8 @@ fieldset {
   padding: 0.5rem;
   font-size: 1rem;
   border-radius: 4px;
-  border: 1px solid #758a8a;
-  background-color: #869999;
+  border: 2px solid #10543b;
+  background-color: #18d398;
   color: #142020;
 }
 
@@ -84,8 +84,8 @@ fieldset {
   padding: 0.5rem;
   font-size: 1rem;
   border-radius: 4px;
-  border: 1px solid #758a8a;
-  background-color: #869999;
+  border: 2px solid #10543b;
+  background-color: #18d398;
   color: #142020;
 }
 
@@ -166,6 +166,7 @@ hr {
 .button-flat {
   background-color: transparent;
   color: #9cbaba;
+  border: 2px solid rgb(113, 5, 107);
 }
 
 .button-flat:hover,
@@ -174,6 +175,7 @@ hr {
   color: #869999;
 }
 
+[formgroupname].ng-invalid.ng-touched.ng-dirty label,
 .control:has(.ng-invalid.ng-touched.ng-dirty) label {
   color: crimson;
 }
