@@ -62,6 +62,7 @@ button {
 a {
   color: #bdadcf;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover,

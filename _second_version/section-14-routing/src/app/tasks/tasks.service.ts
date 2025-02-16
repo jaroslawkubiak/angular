@@ -41,6 +41,7 @@ export class TasksService {
   }
 
   addTask(taskData: NewTaskData, userId: string) {
+    console.log(`add task`);
     this.tasks.update((prevTasks) => [
       {
         id: new Date().getTime().toString(),
@@ -62,6 +63,7 @@ export class TasksService {
   }
 
   private saveTasks() {
+    console.log(`saving`);
     localStorage.setItem('tasks', JSON.stringify(this.tasks()));
   }
 }

@@ -9,6 +9,7 @@ import { UsersService } from './users.service';
   templateUrl: './users.component.html',
   styleUrl: './users.component.css',
   imports: [UserComponent],
+  
 })
 export class UsersComponent {
   private usersService = inject(UsersService);
